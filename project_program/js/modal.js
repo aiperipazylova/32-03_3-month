@@ -26,20 +26,14 @@ modal.onclick = (event) => {
 
 // HOMEWORK 3 (PART 2)
 
-const myModal = () => {
-  const modal = document.querySelector('.modal')
-  modal.style.display = 'block'
-
-  window.removeEventListener('scroll', checkIfScrolledToBottom)
-}
-
 const checkIfScrolledToBottom = () => {
   const scrollPosition = window.scrollY;
   const windowHeight = window.innerHeight
-  const documentHeight = document.body.scrollHeight
+  const documentHeight = document.body.offsetHeight
 
-  if (scrollPosition + windowHeight >= documentHeight) {
-      myModal()
+  if ((scrollPosition + windowHeight) >= documentHeight) {
+      openModal()
+      window.removeEventListener('scroll', checkIfScrolledToBottom)
   }
 }
 
@@ -54,6 +48,3 @@ const showModal = () => {
 }
 
 setTimeout(showModal, 10000)
-
-
-
