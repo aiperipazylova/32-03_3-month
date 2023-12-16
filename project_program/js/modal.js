@@ -23,6 +23,7 @@ modal.onclick = (event) => {
     // }
 }
 
+
 // HOMEWORK 3 (PART 2)
 
 const myModal = () => {
@@ -38,7 +39,7 @@ const checkIfScrolledToBottom = () => {
   const documentHeight = document.body.scrollHeight
 
   if (scrollPosition + windowHeight >= documentHeight) {
-      showModal()
+      myModal()
   }
 }
 
