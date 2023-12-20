@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Loki",
+    "age": 42,
+    "photo": "https://people.com/thmb/aSn4RsM25ETxV0e60F5waxfCVsY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(919x292:921x294)/Tom-Hiddleston-as-Loki-021423-9fb9630ef3474e42a996012c183419ad.jpg"
+  },
+  {
+    "name": "Mobius",
+    "age": 45,
+    "photo": "https://assets1.ignimgs.com/thumbs/userUploaded/2021/6/9/36190303loki-mobiusblogroll-1623286870505.jpeg"
+  },
+  {
+    "name": "Sylvie",
+    "age": 38,
+    "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAXSEP_XQlvBb2nNT4mVvgddvEl98WzT6d-g&usqp=CAU"
+  },
+  {
+    "name": "Casey",
+    "age": 40,
+    "photo": "https://static1.cbrimages.com/wordpress/wp-content/uploads/2022/09/Casey-from-Loki.jpg"
+  },
+  {
+    "name": "Ravonna",
+    "age": 35,
+    "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuZzX8JfKD3vyl0AfMfHZoRplff2e9IlDJiA&usqp=CAU"
+  },
+  {
+    "name": "Miss Minutes",
+    "age": 1000, 
+    "photo": "https://static1.colliderimages.com/wordpress/wp-content/uploads/2023/10/loki-miss-minutes.jpg"
+  }
+]
