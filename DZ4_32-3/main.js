@@ -1,3 +1,5 @@
+//Homework 4 (Part 1)
+
 const wrapperPeoples = document.querySelector('.wrapper')
 
 const getCards = () => {
@@ -27,3 +29,18 @@ const getCards = () => {
 }
 
 getCards()
+
+//Homework 4 (Part 2)
+
+const getMarvels = () => {
+  const request = new XMLHttpRequest()
+  request.open('GET','marvels.json')
+  request.setRequestHeader('Content-type', 'application/json')
+  request.send()
+
+  request.onload = () => {
+      console.log(request.response)
+     }
+}
+
+getMarvels()
