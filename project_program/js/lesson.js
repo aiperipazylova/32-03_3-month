@@ -184,7 +184,7 @@ const card = document.querySelector('.card'),
     btnNext = document.querySelector('#btn-next'),
     btnPrev = document.querySelector('#btn-prev')
 
-let countCard = 1
+let count = 1
 
 const fetchCard = (id) => {
         fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
@@ -199,13 +199,23 @@ const fetchCard = (id) => {
 }
 
 btnNext.onclick = () => {
-    count < 200 ? count++ : count = 1
-    fetchCard(count)
+    if (count < 200) {
+        count++
+        fetchCard(count)
+    } else {
+        count = 1
+        fetchCard(count)
+    }
 }
 
 btnPrev.onclick = () => {
-    count > 1 ? count-- : count = 200
-    fetchCard(count)
+    if (count > 1) {
+        count--
+        fetchCard(count)
+    } else {
+        count = 200
+        fetchCard(count)
+    }
 }
 
 fetchCard(count)
