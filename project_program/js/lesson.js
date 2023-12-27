@@ -177,3 +177,35 @@ const converter = (element, targetElement1, targetElement2, current) => {
 converter(som, usd, euro, 'som')
 converter(usd, som, euro, 'usd')
 converter(euro, som, usd, 'euro')
+
+// CARD SWITCHER
+
+const card = document.querySelector('.card'),
+    btnNext = document.querySelector('#btn-next'),
+    btnPrev = document.querySelector('#btn-prev')
+
+let countCard = 1
+
+const fetchCard = (id) => {
+        fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
+            .then(response => response.json())
+            .then(data => {
+                card.innerHTML = `
+                    <p>${data.title}</p>
+                    <p style = "color: ${data.completed ? 'green' : 'red'}">${data.completed}</p>
+                    <span>${data.id}</span>
+                `
+            })
+}
+
+btnNext.onclick = () => {
+    count < 200 ? count++ : count = 1
+    fetchCard(count)
+}
+
+btnPrev.onclick = () => {
+    count > 1 ? count-- : count = 200
+    fetchCard(count)
+}
+
+fetchCard(count)
