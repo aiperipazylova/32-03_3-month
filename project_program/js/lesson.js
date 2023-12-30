@@ -17,7 +17,6 @@ phoneButton.onclick = () => {
 }
 
 
-
 //TAB SLIDER
 
 const tabContentBlocks = document.querySelectorAll('.tab_content_block')
@@ -219,3 +218,36 @@ btnPrev.onclick = () => {
 }
 
 fetchCard(count)
+
+// WEATHER
+
+const cityNameInput = document.querySelector('.cityName')
+const city = document.querySelector('.city')
+const temp = document.querySelector('.temp')
+
+const BASE_URL = 'http://api.openweathermap.org'
+const API_KEY = 'e417df62e04d3b1b111abeab19cea714'
+
+
+
+// http://api.openweathermap.org/data/2.5/weather
+
+//query = запрос, query параметры сохдаются бекендами индивидуально (бывают разные) например ?q=
+// допустим weather это большой json внутри которого все данные по погоде, их очень много и чтобы получать точные данные конкретного места нужно  query параметры при помощи которых мы можем оптимизировать наши запросы. Это делается бекендами. Он пишет нам в документации инструкцию как использовать API и пареметры.
+//query параметры попадают в payload в network. Payload появляется в 2 случаях: 1) когда пишем query параметры и 2) если отправляем post запрос
+
+const citySearch = () => {
+    cityNameInput.addEventListener('input', (event) => {
+        fetch(`${BASE_URL}/data/2.5/weather?q=${event.target.value}&appid=${API_KEY}`)
+        // данная API (ссылка) состоит из 6 частей: 1) протокол - http://  2) доменное имя - api.openweathermap.org
+        // 3)и 4) Расположение пути и где хранятся данные - data/2.5/weather 5) query параметр - ?q=Bishkek 
+        // 6) appid (API key) - e417df62e04d3b1b111abeab19cea714
+            .then (response => response.json())
+            .then (data => {
+                city.innerHTML = data.name ? data.name : 'Город не найден...'
+                temp.innerHTML = data?.main?.temp ?Math.round(data?.main?.temp - 273.15) + '&deg;C' : '; )'
+            })
+    })
+}
+
+citySearch()

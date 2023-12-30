@@ -99,8 +99,3 @@ let intervalId
         seconds.innerHTML = counterValue
         clearInterval(intervalId)
     }
-
-
-
-
-
